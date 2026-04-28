@@ -9,27 +9,24 @@ This project is a classic "Flappy Bird" arcade game implementation written in **
 * **Graphics:** Graphics2D with anti-aliasing and gradient shading.
 
 ## 3. Project Structure
-* **Game.java**: The core engine. Manages the game loop (20ms ticks), state transitions (Menu, Active, Game Over), and coordinate-based scoring logic.
-* **Bird.java**: Handles player physics, including gravity constants and jump (flop) velocity.
-* **Walls.java**: Manages obstacle generation, randomized gap heights, and horizontal movement.
+* **Main.java**: The entry point of the application. Contains the `main` method that initializes and starts the game.
+* **Game.java**: The core engine. Manages the game loop, state transitions, and coordinate-based scoring logic.
+* **Bird.java**: Handles player physics, including gravity constants and jump velocity.
+* **Walls.java**: Manages obstacle generation and movement.
 
 ## 4. Key Features
-* **Procedural Rendering**: High-quality pipes drawn using `GradientPaint` to simulate 3D volume without external assets.
+* **Procedural Rendering**: High-quality pipes drawn using `GradientPaint` to simulate 3D volume.
 * **Collision Detection**: Precise intersection checks using `java.awt.Rectangle`.
-* **Dynamic Scoring**: Score increments precisely as the bird passes the pipe's X-boundary.
-* **Resource Resilience**: Implements a fallback system that renders geometric shapes if PNG/JPG assets are missing.
+* **Dynamic Scoring**: Score increments as the bird successfully passes each obstacle.
+* **Resource Resilience**: Implements a fallback system to render geometric shapes if image assets are missing.
 
 ## 5. Controls
-* **Mouse**: Click **START GAME** in the menu or anywhere on the screen to restart after a crash.
+* **Mouse**: Click **START GAME** in the menu or anywhere on the screen to restart.
 * **Keyboard**: Press **SPACEBAR** to jump.
 
 ## 6. Deployment & Execution
 To compile and bundle the project manually:
-1. **Compile**: `javac Game.java Bird.java Walls.java`
-2. **Package**: `jar cfe FlappyBird.jar Game *.class *.png *.jpg`
+1. **Compile**: `javac Main.java Game.java Bird.java Walls.java`
+2. **Package**: `jar cfe FlappyBird.jar Main *.class *.png *.jpg`
 3. **Run**: `java -jar FlappyBird.jar`
 
----
-**Developer:** Ruslan Dzikanczuk
-**Institution:** Warsaw University of Technology
-**Faculty:** Electronics and Information Technology (Elka)
